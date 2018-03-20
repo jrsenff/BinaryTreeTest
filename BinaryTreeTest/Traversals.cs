@@ -4,10 +4,10 @@ Module Name:  Traversals.cs
 Project:      BFS-Queue
 Author:       Jerold Senff
 Created:      09/15/2015
-Updated:      12/12/2016
+Updated:      03/20/2018
 
 BFS-Queue:
-Project creates an integer binary tree to test the output from four
+Project creates an integer binary tree to test the output from five
 tree traversal methods against expected values.
 
 \***************************************************************************/
@@ -22,39 +22,61 @@ namespace BFS_Queue
     {
         public static StringBuilder LevelByLevelTraversal(BinaryTreeNode<int> root, StringBuilder result)
         {
-            Queue<BinaryTreeNode<int>> queue1 = new Queue<BinaryTreeNode<int>>();
-            Queue<BinaryTreeNode<int>> queue2 = new Queue<BinaryTreeNode<int>>();
+            Queue<BinaryTreeNode<int>> queue = new Queue<BinaryTreeNode<int>>();
 
-            queue1.Enqueue(root);
-
-            while (queue1.Count != 0 || queue2.Count != 0)
+            if (root != null)
             {
-                while (queue1.Count != 0)
+                queue.Enqueue(root);
+
+                while (queue.Count > 0)
                 {
-                    BinaryTreeNode<int> u = queue1.Dequeue();
+                    BinaryTreeNode<int> node = queue.Dequeue();
 
-                    Console.Write(u.Value + " ");
-                    result.Append(u.Value + " ");
+                    Console.Write(node.Value + " ");
+                    result.Append(node.Value + " ");
 
-                    if (u.Left != null)
-                        queue2.Enqueue(u.Left);
-                    if (u.Right != null)
-                        queue2.Enqueue(u.Right);
-
-                    while (queue2.Count != 0)
+                    if (node.Left != null)
                     {
-                        BinaryTreeNode<int> v = queue2.Dequeue();
+                        queue.Enqueue(node.Left);
+                    }
 
-                        Console.Write(v.Value + " ");
-                        result.Append(v.Value + " ");
-
-                        if (v.Left != null)
-                            queue1.Enqueue(v.Left);
-                        if (v.Right != null)
-                            queue1.Enqueue(v.Right);
+                    if (node.Right != null)
+                    {
+                        queue.Enqueue(node.Right);
                     }
                 }
             }
+
+            return result;
+        }
+
+        public static StringBuilder DepthFirstTraversal(BinaryTreeNode<int> root, StringBuilder result)
+        {
+            Stack<BinaryTreeNode<int>> stack = new Stack<BinaryTreeNode<int>>();
+
+            if (root != null)
+            {
+                stack.Push(root);
+
+                while (stack.Count > 0)
+                {
+                    BinaryTreeNode<int> node = stack.Pop();
+
+                    Console.Write(node.Value + " ");
+                    result.Append(node.Value + " ");
+
+                    if (node.Left != null)
+                    {
+                        stack.Push(node.Left);
+                    }
+
+                    if (node.Right != null)
+                    {
+                        stack.Push(node.Right);
+                    }
+                }
+            }
+
             return result;
         }
 
