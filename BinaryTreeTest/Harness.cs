@@ -4,10 +4,10 @@ Module Name:  Harness.cs
 Project:      BFS-Queue
 Author:       Jerold Senff
 Created:      09/15/2015
-Updated:      12/12/2016
+Updated:      03/20/2018
 
 BFS-Queue:
-Project creates an integer binary tree to test the output from four
+Project creates an integer binary tree to test the output from five
 tree traversal methods against expected values.
 
 \***************************************************************************/
@@ -41,9 +41,10 @@ namespace BFS_Queue
                 Console.WriteLine("\n\t Traversal Test Menu");
                 Console.WriteLine("\t------------------------");
                 Console.WriteLine("\n\t 1. Level-by-level");
-                Console.WriteLine("\n\t 2. Preorder");
-                Console.WriteLine("\n\t 3. Inorder");
-                Console.WriteLine("\n\t 4. Postorder");
+                Console.WriteLine("\n\t 2. Depth-first");
+                Console.WriteLine("\n\t 3. Preorder");
+                Console.WriteLine("\n\t 4. Inorder");
+                Console.WriteLine("\n\t 5. Postorder");
                 Console.WriteLine("\n\nPlease enter your choice (1-4) or 9 to exit...\n");
 
                 if (Int32.TryParse(Console.ReadLine(), out selection))
@@ -65,7 +66,7 @@ namespace BFS_Queue
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("\nBeginning Level By Level Traversal test...\n\n");
+                        Console.WriteLine("\nBeginning Level-By-Level Traversal test...\n\n");
                         Console.WriteLine("\nMethod output: \n");
 
                         StringBuilder levelResult = new StringBuilder();
@@ -85,6 +86,26 @@ namespace BFS_Queue
 
                     case 2:
                         Console.Clear();
+                        Console.WriteLine("\nBeginning Depth-First Traversal test...\n\n");
+                        Console.WriteLine("\nTest method output: \n");
+
+                        StringBuilder depthResult = new StringBuilder();
+                        Traversals.PreorderTraversal(btree.Root, depthResult);
+
+                        string depthExpected = "1 2 4 5 3 6";
+                        Console.WriteLine("\n\n\nExpected output: \n");
+                        Console.WriteLine(depthExpected);
+
+                        if (depthExpected.ToString() == depthResult.ToString().Trim(' '))
+                            Console.WriteLine("\n\nPASS! Outputs match!!");
+                        else
+                            Console.WriteLine("\n\nFAIL! Outputs do not match!!");
+
+                        Continue();
+                        break;
+
+                    case 3:
+                        Console.Clear();
                         Console.WriteLine("\nBeginning Preorder Traversal test...\n\n");
                         Console.WriteLine("\nTest method output: \n");
 
@@ -103,7 +124,7 @@ namespace BFS_Queue
                         Continue();
                         break;
 
-                    case 3:
+                    case 4:
                         Console.Clear();
                         Console.WriteLine("\nBeginning Inorder Traversal test...\n\n");
                         Console.WriteLine("\nTest method output: \n");
@@ -123,7 +144,7 @@ namespace BFS_Queue
                         Continue();
                         break;
 
-                    case 4:
+                    case 5:
                         Console.Clear();
                         Console.WriteLine("\nBeginning Postorder Traversal test...\n\n");
                         Console.WriteLine("\nTest method output: \n");

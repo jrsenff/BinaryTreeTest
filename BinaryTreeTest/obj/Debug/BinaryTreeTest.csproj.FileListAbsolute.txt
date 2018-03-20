@@ -4,3 +4,10 @@ D:\Dev\GitHub\BinaryTreeTest\BinaryTreeTest\bin\Debug\BinaryTreeTest.pdb
 D:\Dev\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.csprojResolveAssemblyReference.cache
 D:\Dev\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.exe
 D:\Dev\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.pdb
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe.config
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\bin\Debug\BinaryTreeTest.exe
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\bin\Debug\BinaryTreeTest.pdb
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.csprojResolveAssemblyReference.cache
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.csproj.CoreCompileInputs.cache
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.exe
+D:\GitHub\BinaryTreeTest\BinaryTreeTest\obj\Debug\BinaryTreeTest.pdb
