@@ -21,11 +21,13 @@ namespace BFS_Queue
         public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right)
         {
             Value = data;
-            NodeList<T> children = new NodeList<T>(2);
-            children[0] = left;
-            children[1] = right;
+            NodeList<T> children = new NodeList<T>(2)
+            {
+                [0] = left,
+                [1] = right
+            };
 
-            Neighbors = children;
+        Neighbors = children;
         }
 
         public BinaryTreeNode<T> Left
