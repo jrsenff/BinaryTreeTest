@@ -4,7 +4,7 @@ Module Name:  BinaryTreeNode.cs
 Project:      BFS-Queue
 Author:       Jerold Senff
 Created:      09/15/2015
-Updated:      03/20/2018
+Updated:      01/10/2019
 
 BFS-Queue:
 Project creates an integer binary tree to test the output from five
